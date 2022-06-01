@@ -47,7 +47,7 @@ function Login(props) {
 
 
     return (
-        <div>
+        <div className='container mt-5'>
             <h3> Please Login </h3>    
             <form onSubmit={handleSubmit}>
             <div className="form-floating mb-3">

@@ -1,12 +1,15 @@
-import { createStore, combineReducers } from 'redux'
-import MovieReducer from '../reducers/movieReducer'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import dishReducer from '../reducers/dishReducer'
+import topRankReducer from '../reducers/topRankReducer'
 
 
 const configStore = () => {
     const store = createStore(combineReducers({
-        movie : MovieReducer
-    }))
+        dish : dishReducer,
+        topRank : topRankReducer
+    }), applyMiddleware(thunk))
     return store
 }
 
-export default configStore
+export default configStore 

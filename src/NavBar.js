@@ -22,25 +22,25 @@ function NavBar(props) {
 
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="nav-link disabled" href=""> Dishpoll Contest </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container-fluid">
+                    <a className="nav-link disabled" href=""> Dishpoll Contest </a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/"> Dishpoll </a>
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                    <ul className="navbar-nav">
+                        <li className="nav-item">
+                        <a className="nav-link active" aria-current="page" href="/"> Dishpoll </a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="/pollResult">Poll Result</a>
+                        <li className="nav-item">
+                        <a className="nav-link" href="/pollResult">Poll Result</a>
                         </li>
                         { userLoggin ? 
                         (
-                            <button class="btn btn-outline-danger me-2" type="button" onClick={handleLogout}>LogOut</button>
+                            <button className="btn btn-outline-danger me-2" type="button" onClick={handleLogout}>LogOut</button>
                         ) : (
-                            <button class="btn btn-outline-success me-2" type="button" onClick={handleLogout}>Login</button>
+                            <button className="btn btn-outline-success me-2" type="button" onClick={handleLogout}>Login</button>
                         ) }
                     </ul>
                 </div>

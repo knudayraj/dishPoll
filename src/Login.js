@@ -50,9 +50,15 @@ function Login(props) {
         <div>
             <h3> Please Login </h3>    
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder='username' name="username" value={username} onChange={handleChange} /> <br />
-                <input type="text" placeholder='password' name="pass" value={pass} onChange={handleChange} /> <br />
-                <input type="submit" value="login" />
+            <div className="form-floating mb-3">
+                <input type="email" className="form-control" id="floatingInput" placeholder='username' name="username" value={username} onChange={handleChange}  />
+            <label>UserName</label>
+            </div>
+            <div className="form-floating">
+                <input type="password" className="form-control" id="floatingPassword" placeholder='password' name="pass" value={pass} onChange={handleChange} />
+            <label>Password</label>
+            </div>
+                <input className='btn-success mt-2' style={{borderRadius : "5px"}} type="submit" value="login" />
             </form>
         </div>
     );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
+import axios from './config/axios'
 
 function Login(props) {
     const { handleLoggedin } = props
@@ -22,10 +23,10 @@ function Login(props) {
             username,
             pass
         }
-        console.log(formData)
-        axios.get('https://raw.githubusercontent.com/syook/react-dishpoll/main/users.json')
+        // console.log(formData)
+        axios.get('/users.json')
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 const users = response.data
                 const result = users.find(ele => {
                     return ele.username == username && ele.password == pass
@@ -51,7 +52,7 @@ function Login(props) {
             <h3> Please Login </h3>    
             <form onSubmit={handleSubmit}>
             <div className="form-floating mb-3">
-                <input type="email" className="form-control" id="floatingInput" placeholder='username' name="username" value={username} onChange={handleChange}  />
+                <input type="text" className="form-control" id="floatingInput" placeholder='username' name="username" value={username} onChange={handleChange}  />
             <label>UserName</label>
             </div>
             <div className="form-floating">

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './NavBar'
-import axios from 'axios';
+// import axios from 'axios';
 import { useDispatch, useStore } from 'react-redux'
 import { addDishes } from './actions/dishAction';
 import { addTopRanks } from './actions/topRankAction';
+import axios from './config/axios';
 
 const App = () => {
   const [userLoggin, setUserLoggin] = useState(false)
@@ -15,7 +16,7 @@ const App = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-      axios.get('https://raw.githubusercontent.com/syook/react-dishpoll/main/db.json')
+      axios.get('/db.json')
           .then(response => {
               // console.log(response.data)
               const dishes = response.data
